@@ -42,24 +42,95 @@ cd botw-guide
 pnpm install
 ```
 
+## Termux/Android Setup Notes (Important for ARM64 Devices)
+
+If you are running this project on Termux (Android ARM64), you may encounter issues due to file system permissions and native module compatibility. Follow these steps:
+
+1.  **Move the project to internal storage:** If you cloned the repository to external storage (e.g., `/storage/emulated/0/...`), `pnpm install` will fail due to symlink permissions. Move the entire `botw-guide` directory to Termux's internal storage:
+    ```bash
+    mv /path/to/external/botw-guide ~/botw-guide
+    cd ~/botw-guide
+    ```
+2.  **Clean and reinstall dependencies:**
+    ```bash
+    rm -rf node_modules pnpm-lock.yaml artifacts/botw-guide/node_modules artifacts/botw-guide/pnpm-lock.yaml
+    pnpm install
+    ```
+3.  **Vite Configuration for Termux (Bypass lightningcss)**: Due to native module issues with `lightningcss` on Android ARM64, the `@tailwindcss/vite` plugin will prevent the dev server from starting. To work around this:
+    *   **Edit `vite.config.ts`**: Remove the `import tailwindcss from "@tailwindcss/vite";` line and the `tailwindcss(),` plugin from the `plugins` array.
+    *   **Disable Vite's CSS processing**: Add the following to your `vite.config.ts`'s `defineConfig` object to prevent Vite from attempting to use `lightningcss` internally:
+        ```typescript
+        export default defineConfig({
+          // ...other config
+          css: {
+            postcss: null,
+            lightningcss: false,
+          },
+          plugins: [
+            react(),
+            // ...other plugins
+          ],
+          // ...
+        });
+        ```
+    *   **Disable HMR overlay (Optional but Recommended)**: To prevent generic runtime error overlays in Termux:
+        ```typescript
+        export default defineConfig({
+          // ...
+          server: {
+            // ...
+            hmr: {
+              overlay: false,
+            },
+          },
+          // ...
+        });
+        ```
+4.  **Use Tailwind CSS Play CDN & Custom Colors**:
+    *   **Edit `artifacts/botw-guide/index.html`**: Ensure the Tailwind CSS Play CDN script is included in the `<head>` section:
+        ```html
+        <head>
+          <!-- ... other head elements -->
+          <script src="https://cdn.tailwindcss.com"></script>
+          <!-- ... -->
+        </head>
+        ```
+    *   **Inject Custom Color Scheme (Optional)**: To replicate the original guide's dark forest/gold theme, add these custom CSS variables within a `<style>` block in `index.html` (e.g., just after the Tailwind CDN script in `<head>`):
+        ```html
+        <head>
+          <!-- ... -->
+          <script src="https://cdn.tailwindcss.com"></script>
+          <style>
+            :root {
+              --color-background: #2F362C; /* Dark forest green/brown */
+              --color-text: #E0E0E0;     /* Light, off-white/parchment */
+              --color-accent: #D4AF37;   /* Golden yellow accent */
+            }
+            body {
+              background-color: var(--color-background);
+              color: var(--color-text);
+            }
+            /* You may need to apply --color-accent to specific elements using inline styles or global Tailwind classes */
+          </style>
+        </head>
+        ```
+
 ## Run locally
 
 ```bash
-pnpm --filter @workspace/botw-guide run start
+# Ensure you are in the project root: cd ~/botw-guide/
+PORT=5173 BASE_PATH=/ pnpm --filter @workspace/botw-guide run dev
 ```
 
-Then open [http://localhost:5173/](http://localhost:5173/) in your browser.
+Then open [http://localhost:5173/](http://localhost:5173/) in your browser (the port may differ — check the terminal output).
 
-> `start` sets `PORT=5173` and `BASE_PATH=/` automatically — no extra configuration needed.
-
-## Preview the production build
+## Build for production
 
 ```bash
 pnpm --filter @workspace/botw-guide run build
-pnpm --filter @workspace/botw-guide run preview
 ```
 
-Preview opens at [http://localhost:4173/](http://localhost:4173/). Build output goes to `artifacts/botw-guide/dist/public/`.
+Output goes to `artifacts/botw-guide/dist/`.
 
 ## Project structure
 
