@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "gStWmpTdWohDs7H1AU_-L"
+uri = "file://artifacts/botw-guide/public/hyrule-map.png"
+type = "image"
+title = "hyrule botw fantasy map"
