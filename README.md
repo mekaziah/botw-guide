@@ -45,18 +45,21 @@ pnpm install
 ## Run locally
 
 ```bash
-pnpm --filter @workspace/botw-guide run dev
+pnpm --filter @workspace/botw-guide run start
 ```
 
-Then open [http://localhost:5173/](http://localhost:5173/) in your browser (the port may differ — check the terminal output).
+Then open [http://localhost:5173/](http://localhost:5173/) in your browser.
 
-## Build for production
+> `start` sets `PORT=5173` and `BASE_PATH=/` automatically — no extra configuration needed.
+
+## Preview the production build
 
 ```bash
 pnpm --filter @workspace/botw-guide run build
+pnpm --filter @workspace/botw-guide run preview
 ```
 
-Output goes to `artifacts/botw-guide/dist/`.
+Preview opens at [http://localhost:4173/](http://localhost:4173/). Build output goes to `artifacts/botw-guide/dist/public/`.
 
 ## Project structure
 
