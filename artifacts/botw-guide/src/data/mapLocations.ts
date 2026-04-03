@@ -162,7 +162,7 @@ export const shrineMarkers: MapMarker[] = [
 // All 15 towers
 export const towerMarkers: MapMarker[] = [
   { id: "tower-great-plateau", name: "Great Plateau Tower", category: "tower", x: 3700, y: 5100, region: "Great Plateau" },
-  { id: "tower-akkala", name: "Akkala Tower", category: "tower", x: 6700, y: 1300, region: "Akkala" },
+  { id: "tower-akkala", name: "Akkala Tower", category: "tower", x: 6800, y: 1200, region: "Akkala" },
   { id: "tower-eldin", name: "Eldin Tower", category: "tower", x: 5200, y: 2000, region: "Eldin" },
   { id: "tower-lanayru", name: "Lanayru Tower", category: "tower", x: 6100, y: 2700, region: "Lanayru" },
   { id: "tower-necluda", name: "Necluda Tower", category: "tower", x: 5700, y: 4200, region: "Necluda" },
@@ -175,15 +175,15 @@ export const towerMarkers: MapMarker[] = [
   { id: "tower-gerudo", name: "Gerudo Tower", category: "tower", x: 1700, y: 5600, region: "Gerudo" },
   { id: "tower-wasteland", name: "Wasteland Tower", category: "tower", x: 1300, y: 6500, region: "Wasteland" },
   { id: "tower-korok-forest", name: "Woodland Tower", category: "tower", x: 3500, y: 2500, region: "Great Hyrule Forest" },
-  { id: "tower-central", name: "Central Tower", category: "tower", x: 4100, y: 3800, region: "Central Hyrule" },
+  { id: "tower-central", name: "Central Tower", category: "tower", x: 4000, y: 3900, region: "Central Hyrule" },
 ];
 
 // Divine Beast locations
 export const divineBeastMarkers: MapMarker[] = [
-  { id: "map-medoh", name: "Vah Medoh", category: "divine-beast", x: 1700, y: 2100, note: "Rito Village — Revali's Gale" },
-  { id: "map-ruta", name: "Vah Ruta", category: "divine-beast", x: 5900, y: 2200, note: "Zora's Domain — Mipha's Grace" },
-  { id: "map-naboris", name: "Vah Naboris", category: "divine-beast", x: 1800, y: 5800, note: "Gerudo Desert — Urbosa's Fury" },
-  { id: "map-rudania", name: "Vah Rudania", category: "divine-beast", x: 5300, y: 1800, note: "Death Mountain — Daruk's Protection" },
+  { id: "map-medoh", name: "Vah Medoh", category: "divine-beast", x: 1500, y: 2500, note: "Rito Village — Revali's Gale" },
+  { id: "map-ruta", name: "Vah Ruta", category: "divine-beast", x: 5500, y: 2300, note: "Zora's Domain — Mipha's Grace" },
+  { id: "map-naboris", name: "Vah Naboris", category: "divine-beast", x: 2000, y: 6000, note: "Gerudo Desert — Urbosa's Fury" },
+  { id: "map-rudania", name: "Vah Rudania", category: "divine-beast", x: 5400, y: 1600, note: "Death Mountain — Daruk's Protection" },
 ];
 
 // Major stables (fast travel points)
@@ -352,7 +352,7 @@ export const korokMarkers: MapMarker[] = [
   // Akkala
   { id: "kor-akk-1", name: "Rock Pattern — Akkala Wilds", category: "korok", x: 6400, y: 1250, region: "Akkala", note: "Rocks are arranged in a star pattern with one missing. Carry the loose rock to the gap." },
   { id: "kor-akk-2", name: "Under Rock — South Akkala", category: "korok", x: 6150, y: 1550, region: "Akkala", note: "Lone rock near the Akkala Lake shore. Lift it." },
-  { id: "kor-akk-3", name: "Balloon Target — Citadel", category: "korok", x: 6520, y: 1370, region: "Akkala", note: "Shoot the moving yellow balloon above Akkala Citadel with an arrow before it floats away." },
+  { id: "kor-akk-3", name: "Balloon — Citadel", category: "korok", x: 6520, y: 1370, region: "Akkala", note: "Shoot the moving yellow balloon above Akkala Citadel with an arrow before it floats away." },
   { id: "kor-akk-4", name: "Offering Bowl — East", category: "korok", x: 6700, y: 1200, region: "Akkala", note: "Place an apple in the offering bowl on the stone pedestal near Akkala Tower. Any fruit works." },
   { id: "kor-akk-5", name: "Flower Trail — North Shore", category: "korok", x: 6900, y: 1050, region: "Akkala", note: "Follow the sparkle trail along the Akkala shoreline. Touch all five flowers quickly." },
   { id: "kor-akk-6", name: "Under Rock — Island", category: "korok", x: 7050, y: 1150, region: "Akkala", note: "On the small rocky island offshore. Lift the boulder with Magnesis." },
@@ -395,10 +395,11 @@ export const korokMarkers: MapMarker[] = [
   { id: "kor-dp-4", name: "Ball-Cup — South", category: "korok", x: 4700, y: 5150, region: "Dueling Peaks", note: "Guide the metal ball along the groove and into the cup hole south of the bridge." },
   { id: "kor-dp-5", name: "Under Rock — Riverside", category: "korok", x: 4900, y: 4900, region: "Dueling Peaks", note: "Lone suspicious rock on the riverbank. Lift it." },
   // Lake
+
   { id: "kor-lake-1", name: "Under Rock — Lake Shore", category: "korok", x: 3400, y: 6000, region: "Lake", note: "On the shore of Lake Hylia. Lift the suspicious lone rock." },
   { id: "kor-lake-2", name: "Jump Rings — Above Lake", category: "korok", x: 3600, y: 5900, region: "Lake", note: "Paraglide from the tower and through the three rings over Lake Hylia. Angle yourself carefully." },
   { id: "kor-lake-3", name: "Flower Trail — Riverside", category: "korok", x: 3800, y: 5800, region: "Lake", note: "Follow the sparkle trail along the river south of Lake Hylia." },
-  { id: "kor-lake-4", name: "Offering Bowl — Ruins", category: "korok", x: 3700, y: 5600, region: "Lake", note: "Place an apple in the stone bowl at the Lake Hylia ancient ruins near Shae Katha Shrine." },
+  { id: "kor-lake-4", name: "Offering Bowl — Ruins", category: "korok", x: 3700, y: 5600, region: "Lake", note: "Place an apple in the bowl at the Lake Hylia ancient ruins near Shae Katha Shrine." },
   { id: "kor-lake-5", name: "Balloon — Bridge Pillar", category: "korok", x: 3550, y: 6150, region: "Lake", note: "Shoot the balloon tied under the Floria Bridge with an arrow from the bank." },
   // Ridgeland
   { id: "kor-rid-1", name: "Under Rock — Ridge", category: "korok", x: 2700, y: 3700, region: "Ridgeland", note: "Lone rock on the Hyrule Ridge hilltop. Lift it." },
@@ -417,7 +418,7 @@ export const korokMarkers: MapMarker[] = [
   // Hebra
   { id: "kor-heb-1", name: "Snowball Race", category: "korok", x: 1380, y: 1350, region: "Hebra", note: "Race the snowball down Hebra Peak before time runs out. Follow directly behind it." },
   { id: "kor-heb-2", name: "Under Snow Rock", category: "korok", x: 1200, y: 1600, region: "Hebra", note: "The suspicious rock near Mozo Shenno Shrine is buried under snow. Clear it and lift." },
-  { id: "kor-heb-3", name: "Flower Trail — Frozen Lake", category: "korok", x: 1600, y: 1250, region: "Hebra", note: "Follows sparkle flowers across the frozen lake. Sprint quickly — the ice is slippery." },
+  { id: "kor-heb-3", name: "Flower Trail — Frozen Lake", category: "korok", x: 1600, y: 1250, region: "Hebra", note: "Follow sparkles flowers across the frozen lake. Sprint quickly — the ice is slippery." },
   { id: "kor-heb-4", name: "Pinwheel — Hebra Canyon", category: "korok", x: 1800, y: 1580, region: "Hebra", note: "Shoot the pinwheel acorn in the Hebra Canyon — it's barely visible. Arrow through the gap." },
   { id: "kor-heb-5", name: "Rock Pattern — Summit", category: "korok", x: 1100, y: 1200, region: "Hebra", note: "Rock circle at Hebra Summit. Place the large missing stone. Use max cold resistance gear." },
   { id: "kor-heb-6", name: "Jump Rings — Peak", category: "korok", x: 1550, y: 1050, region: "Hebra", note: "Paraglide through rings above Gee Ha'kal peak. Needs Revali's Gale + extended stamina." },
