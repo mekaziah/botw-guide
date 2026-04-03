@@ -185,12 +185,16 @@ Then open [http://localhost:5173/](http://localhost:5173/) in your browser (the 
     cd ~/botw-guide/
     PORT=5173 BASE_PATH=/ pnpm --filter @workspace/botw-guide run build
     ```
-2.  Serve (on port 8002):
+2.  Serve (using the custom SPA server on port 8010):
     ```bash
-    cd ~/botw-guide/artifacts/botw-guide/dist/public/
-    python3 -m http.server 8002
+    # Navigate to the project root
+    cd ~/botw-guide/
+    # Run the custom SPA server from the public distribution directory
+    python3 spa_server.py
     ```
-    Then open [http://localhost:8002/](http://localhost:8002/) in your browser.
+    Then open [http://localhost:8010/](http://localhost:8010/) in your browser.
+    
+    **Note on SPA Server (spa_server.py)**: This custom Python server is essential for client-side routing (e.g., `/gear`, `/map`) to work correctly when serving the production build. It provides a fallback to `index.html` for any paths not found, allowing your React router to take over.
 
 ## Project structure
 
